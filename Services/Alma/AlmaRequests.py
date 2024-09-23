@@ -54,7 +54,7 @@ class AlmaRequests(object):
             etape_traitement_demande = demande['task_name']
             type_de_demande = demande['request_sub_type']['value']
             # TODO valeur 'Rejected' à supprimer pour le passage en prod
-            if bib_retrait =='1602000000' and  etape_traitement_demande in ['Transit Item', 'Rejected'] and type_de_demande == 'PATRON_PHYSICAL':
+            if bib_retrait =='1602000000' and  etape_traitement_demande == 'Transit Item' and type_de_demande == 'PATRON_PHYSICAL':
                 #On récupère le nom et le code barre de l'utilisateur
                 user_primary_id = demande['user_primary_id']
                 user = AlmaUser.AlmaUser(user_id=user_primary_id,apikey=self.apikey,service=self.service)

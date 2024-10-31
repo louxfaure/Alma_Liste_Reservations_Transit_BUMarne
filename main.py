@@ -59,7 +59,7 @@ mes_logs.debug(json.dumps(data,indent=4))
 with open(fichier_csv, mode='w', newline='', encoding='utf-8') as file:
     # Extraction des en-têtes depuis les clés du premier dictionnaire
     fieldnames = data[0].keys()
-    writer = csv.DictWriter(file, fieldnames=fieldnames)
+    writer = csv.DictWriter(file, fieldnames=fieldnames, delimiter='|')
 
     # Écriture des en-têtes et des lignes de données
     writer.writeheader()
